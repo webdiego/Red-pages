@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gem: MyString
+  repo: MyString
+  category: MyString
+
+two:
+  gem: MyString
+  repo: MyString
+  category: MyString
