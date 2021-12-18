@@ -1,19 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Gem:</strong>
-  <%= @page.gem %>
-</p>
+  <div class="h-full w-full flex flex-col items-center justify-center mt-12 container max-auto ">
 
-<p>
-  <strong>Repo:</strong>
-  <%= @page.repo %>
-</p>
+    <%= image_tag ("ruby.png"), class:"w-20" %>
+    
+    <div class="flex flex-col rounded-lg bg-red-400 mt-10 py-2 px-10">
 
-<p>
-  <strong>Category:</strong>
-  <%= @page.category %>
-</p>
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+      <div class="flex mt-4">
+        <p class="text-red-700 font-bold text-lg">Gem: <span class="font-normal text-base text-white pl-2"> <%= @page.gem %></span></p>
+      </div>
+      <div class="flex mt-4">
+        <p class="text-red-700 font-bold text-lg">Repo: <span class="font-normal text-base text-white pl-2"><%= @page.repo %></span></p>
+      </div>
+      <div class="flex mt-4">
+      <p class="text-red-700 font-bold text-lg">Category:<span class="font-normal text-base text-white pl-2"> <%= @page.category %></span></p>
+      </div>
+    <div class="flex mt-4 justify-center items-center mt-8 pb-8">
+      <%= link_to 'Back', pages_path , class:"uppercase bg-white py-2 px-4 mr-2 rounded-md hover:opacity-75 font-bold text-white text-xs text-red-700"%>
+      <%= link_to 'Edit', edit_page_path(@page) , class:"uppercase bg-white py-2 px-4 mr-2 rounded-md hover:opacity-75 font-bold text-white text-xs text-red-400" %> 
+     </div>
+  </div>
+ </div>

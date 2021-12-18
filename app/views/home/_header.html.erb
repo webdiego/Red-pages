@@ -1,8 +1,12 @@
 <header class="bg-red-400">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-    <div class="w-full py-6 flex items-center justify-between border-b border-white-500 lg:border-none">
-      <div class="flex items-center justify-center">
-          <div class="h-8 w-8 transform rotate-45 bg-red-600 cursor-pointer animate-pulse border-2 border-pink-600" ><%= link_to "Red pages", root_path, class:"hidden"%></div>
+    <div class="w-full py-6 flex items-center justify-between lg:border-none">
+      <div class="flex items-center justify-center w-full">
+          <div class="h-8 w-8 cursor-pointer transform transition-all hover:rotate-45 " >
+          <%= image_tag ("ruby.png"), class:"w-10" %>
+          <%= link_to "Red pages", root_path, class:"hidden "%>
+          </div>
+
           <%= link_to "Red Pages", root_path, class:"text-xl font-medium text-white hover:text-red-100 ml-5 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-red-700 to-red-800" %>
 
         <div class="hidden ml-10 space-x-8 lg:block">
@@ -16,11 +20,15 @@
         </div>
       </div>
 
-  
-
     </div>
     <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white">
       <%= link_to "About", home_about_path, class:"text-sm font-medium text-white " %>
     </div>
+    <div class=" py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white">
+         <%= link_to "Gems", pages_path, class:"text-sm font-medium text-white" %>
+        </div>
+        <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white">
+         <%= link_to "Add Gem", new_page_path, class:"text-sm font-medium text-white " %>
+        </div>
   </nav>
 </header>
