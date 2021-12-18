@@ -10,25 +10,30 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field text-lg font-bold my-4">
-    <%= form.label :gem %>
-    <%= form.text_field :gem , class:"border-2 border-red-200 rounded-md" %>
-  </div>
-
-  <div class="field text-lg font-bold my-4">
-    <%= form.label :repo %>
-    <%= form.text_field :repo , class:"border-2 border-red-200 rounded-md" %>
-  </div>
-
-  <div class="field text-lg font-bold my-4">
-    <%= form.label :category %>
-    <%= form.text_field :category , class:"border-2 border-red-200 rounded-md" %>
-  </div>
-
-  <div class="actions bg-red-400 rounded-md flex items-center my-4 ">
-    <div class="py-2 px-4 text-white">
-    <%= form.submit  %>
+  
+<div class="max-w-7xl mx-auto">
+  <h1 class="mt-12 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl text-red-600">Add a Gem</h1>
+    <p class="text-gray-800">Add your favourite and the most used gems.</p>
+    
+    <div class="field text-lg font-bold mb-4 mt-12">
+      <%= form.label :gem %>
+      <%= form.text_field :gem , class:"border-2 border-red-200 rounded-md" %>
     </div>
-  </div>
+
+    <div class="field text-lg font-bold my-4">
+      <%= form.label :repo %>
+      <%= form.text_field :repo , class:"border-2 border-red-200 rounded-md" %>
+    </div>
+
+    <div class="field text-lg font-bold my-4">
+      <%= form.label :category %>
+      <%= form.text_field :category , class:"border-2 border-red-200 rounded-md" %>
+    </div>
+
+    <div class="actions bg-red-400 rounded-md flex items-center justify-center my-4 max-w-sm">
+      <div class="py-2 px-4 text-white ">
+      <%= form.submit  %>
+      </div>
+    </div>
+    </div>
 <% end %>

@@ -1,31 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Pages</h1>
+<div class="max-w-7xl mx-auto h-full ">
+    <h1 class="mt-12 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl text-red-600">Gems</h1>
+    <p class="text-gray-800">These are your gems!</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Gem</th>
-      <th>Repo</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <div class="mb-8 mt-12">
+        <div class="w-full grid grid-cols-4 gap-2 text-white items-center text-center text-xl font-bold tracking-wider">
+          <p class=" bg-red-500 rounded-md border-2 border-red-300 py-2">Gem</p>
+          <p class=" bg-red-500 rounded-md border-2 border-red-300 py-2">Repo</p>
+          <p class=" bg-red-500 rounded-md border-2 border-red-300 py-2">Category</p>      
+          <p class=" bg-red-400 rounded-md border-2 border-pink-300 py-2">Actions</p>   
+        </div>
+      </div>
 
-  <tbody>
-    <% @pages.each do |page| %>
-      <tr>
-        <td><%= page.gem %></td>
-        <td><%= page.repo %></td>
-        <td><%= page.category %></td>
-        <td><%= link_to 'Show', page %></td>
-        <td><%= link_to 'Edit', edit_page_path(page) %></td>
-        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="mb-8">
+        <% @pages.each do |page| %>       
+              <div class="w-full grid grid-cols-4 gap-2 text-center font-medium text-lg border-b border-red-100 pb-2">
+                  <p class="text-gray-900"><%= page.gem %></p>
+                  <p class="underline text-red-600"><%=link_to page.repo, page.repo %></p>
+                  <p class="text-gray-900"><%= page.category %></p>
+                  <div class=" text-xs text-white font-black">
+                    <button class="uppercase bg-red-400 py-2 px-4 mr-2 rounded-md hover:opacity-75 font-bold"><%= link_to 'Show', page %></button>
+                    <button class="uppercase bg-red-500 py-2 px-4 mr-2 rounded-md hover:opacity-75"><%= link_to 'Edit', edit_page_path(page) %></button>
+                    <button class="uppercase bg-red-700 py-2 px-4 rounded-md hover:opacity-75"><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+                </div>
+                </div>
 
-<br>
-
-<%= link_to 'New Page', new_page_path %>
+        <% end %>
+    </div>
+    <div class="flex items-center justify-center">
+     <%= link_to 'Add a new gem', new_page_path, class:"bg-pink-600 py-2 text-white px-4 rounded-md hover:opacity-75 mt-10 self-center"%>
+     </div>
+</div>
