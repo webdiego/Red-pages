@@ -15,6 +15,10 @@
   <body>
   <%= render "home/header" %>
     <div >
+    <% if notice %>
+     <%= render "layouts/alert"%>
+    <% end %>
+
     <%= yield %>
      </div>
   </body>

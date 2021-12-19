@@ -1,34 +1,56 @@
-<header class="bg-red-400">
+<header class="bg-red-400 m-5 rounded-xl">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
     <div class="w-full py-6 flex items-center justify-between lg:border-none">
-      <div class="flex items-center justify-center w-full">
-          <div class="h-8 w-8 cursor-pointer transform transition-all hover:rotate-45 " >
+      <div class="flex flex-row items-center justify-around w-full ">
+      <div class="flex items-center">
+          <div class="h-8 w-8 cursor-pointer transform transition-all hover:rotate-45 flex items-center justify-center " >
           <%= image_tag ("ruby.png"), class:"w-10" %>
-          <%= link_to "Red pages", root_path, class:"hidden "%>
+          <%= link_to "Red pages", root_path, class:"hidden mr-10"%>
           </div>
 
           <%= link_to "Red Pages", root_path, class:"text-xl font-medium text-white hover:text-red-100 ml-5 font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-red-700 to-red-800" %>
 
-        <div class="hidden ml-10 space-x-8 lg:block">
+        <div class="hidden  ml-5 space-x-8 lg:block">
          <%= link_to "About", home_about_path, class:"text-base font-medium text-white hover:text-red-100" %>
         </div>
-        <div class="hidden ml-10 space-x-8 lg:block">
+       
+    
+ </div>
+        <div class="flex">
+        <% if user_signed_in? %>
+          <div class="hidden  ml-5 space-x-8 lg:block">
          <%= link_to "Gems", pages_path, class:"text-base font-medium text-white hover:text-red-100" %>
         </div>
         <div class="hidden ml-10 space-x-8 lg:block">
          <%= link_to "Add Gem", new_page_path, class:"text-base font-medium text-white hover:text-red-100" %>
         </div>
+            <div class=" ml-5 lg:block bg-white px-4 py-2 rounded-lg ">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete,  class:"text-base font-medium text-red-400 hover:text-red-300 " %>
+            </div>
+            <div class=" ml-5 lg:block bg-white px-4 py-2 rounded-lg ">
+            <%= link_to "Edit Profile", edit_user_registration_path, class:"text-base font-medium text-red-400 hover:text-red-300 " %>
+            </div>
+         <% else %>
+            <div class="  ml-5 lg:block bg-white px-4 py-2 rounded-lg ">
+            <%= link_to "Sign Up", new_user_registration_path, class:"text-base font-medium text-red-400 hover:text-red-300 " %>
+            </div>
+            <div class="  ml-5 lg:block bg-white px-4 py-2 rounded-lg ">
+            <%= link_to "Sign In", new_user_session_path, class:"text-base font-medium text-red-400 hover:text-red-300 " %>
+            </div>
+         <% end %>
+        </div>
       </div>
 
     </div>
-    <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white">
-      <%= link_to "About", home_about_path, class:"text-sm font-medium text-white " %>
-    </div>
-    <div class=" py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white">
+    
+      <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white border-b-2 border-white">
+        <%= link_to "About", home_about_path, class:"text-sm font-medium text-white " %>
+      </div>
+      <div class=" py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white border-b-2 border-white">
          <%= link_to "Gems", pages_path, class:"text-sm font-medium text-white" %>
-        </div>
-        <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white">
+      </div>
+      <div class="py-4 flex flex-wrap justify-center space-x-6 lg:hidden text-white">
          <%= link_to "Add Gem", new_page_path, class:"text-sm font-medium text-white " %>
-        </div>
+      </div>
   </nav>
 </header>
